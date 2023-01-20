@@ -1,12 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OchosState : StateMachineBehaviour
+public class FollowerOchosState : StateMachineBehaviour
 {
-    public LeaderAnimatorAsset AnimatorAsset;
-    protected readonly float[] limits = { 0.99f, 0.01f };
-    protected int index = 0;
+    public FollowerAnimatorAsset AnimatorAsset;
+    readonly float limit = 0.99f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,16 +17,15 @@ public class OchosState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (ChangeDir(Mathf.Abs(stateInfo.normalizedTime)))
-        {            
+        if (ChangeDir(stateInfo.normalizedTime))
+        {
             animator.SetFloat(AnimatorAsset.OchosSpeedParam, animator.GetFloat(AnimatorAsset.OchosSpeedParam)*-1f);
-            index = (index + 1) % 2;
         }
     }
 
-    protected bool ChangeDir(float absNormTime)
+    bool ChangeDir(float normTime)
     {
-        return (index == 0)? (absNormTime - (int)absNormTime) > limits[index] : (absNormTime - (int)absNormTime) < limits[index];
+        return (normTime - (int)normTime) > limit;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

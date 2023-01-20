@@ -8,11 +8,12 @@ public class LeaderController : MonoBehaviour
 {
     public InputAsset InputAsset;
     public LeaderAnimatorAsset AnimatorAsset;
+    public Transform ModelRoot;
     public float TurnSpeed;
     public float MoveSpeed;
     public int MinTracks;
     public int MaxTracks;
-    
+
     private Rigidbody rb;
     private Animator anim;
     private float moveInput;
@@ -23,13 +24,32 @@ public class LeaderController : MonoBehaviour
     private bool tracksSwitchInput;
     private int tracksSwitchCounter;
     private int canMove;
+    private bool moving;
+    private bool siding;
+    private bool ochosInput;
+
+    public float MoveInput { get => moveInput; }
+    public float TurnInput { get => turnInput; }
+    public float SideInput { get => sideInput; }
+    public float UpperTurnInput { get => upperTurnInput; }
+    public float MedialunaInput { get => medialunaInput; }
+    public bool MedialunaAction { get => Mathf.Abs(medialunaInput) > 0; }
+    public bool OchosInput { get => ochosInput; }
+    public int Tracks { get => MinTracks + tracksSwitchCounter; }
+    public bool TracksInput { get => tracksSwitchInput; }
+    public int CanMove { get => canMove; }
+    public bool IsMoving { get => moving; }
+    public bool IsSiding { get => siding; }
+    public float MoveDir { get => anim.GetFloat(AnimatorAsset.DirParam); }
+    public float OchosSpeed { get => anim.GetFloat(AnimatorAsset.OchosSpeedParam); }
+    public Vector3 Forward { get => new(ModelRoot.forward.x, 0f, ModelRoot.forward.z); }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        tracksSwitchCounter = 0;
+        tracksSwitchCounter = 0;        
     }
 
     // Update is called once per frame
@@ -42,9 +62,10 @@ public class LeaderController : MonoBehaviour
         tracksSwitchInput = Input.GetKeyDown(InputAsset.TracksSwitchKey);
         tracksSwitchCounter = (tracksSwitchCounter + Convert.ToInt32(tracksSwitchInput)) % (MaxTracks - MinTracks + 1);
         medialunaInput = Input.GetAxis(InputAsset.MedialunaAxis);
+        ochosInput = Input.GetKey(InputAsset.OchosKey);
 
-        bool moving = (Mathf.Abs(moveInput) > 0);
-        bool siding = (Mathf.Abs(sideInput) > 0);
+        moving = Mathf.Abs(moveInput) > 0;
+        siding = Mathf.Abs(sideInput) > 0;
         canMove = Convert.ToInt32(moving ^ siding);
 
         anim.SetBool(AnimatorAsset.MoveParam, moving);
@@ -52,9 +73,9 @@ public class LeaderController : MonoBehaviour
         anim.SetFloat(AnimatorAsset.DirParam, (moving ? moveInput : sideInput) * canMove);
         anim.SetFloat(AnimatorAsset.UpperTurnDirParam, upperTurnInput);        
         anim.SetInteger(AnimatorAsset.TracksNumberParam, MinTracks + tracksSwitchCounter);
-        anim.SetBool(AnimatorAsset.MedialunaParam, Mathf.Abs(medialunaInput) > 0);
+        anim.SetBool(AnimatorAsset.MedialunaParam, MedialunaAction);
         anim.SetFloat(AnimatorAsset.MedialunaDirParam, medialunaInput);
-        anim.SetBool(AnimatorAsset.OchosParam, Input.GetKey(InputAsset.OchosKey));
+        anim.SetBool(AnimatorAsset.OchosParam, ochosInput);
     }
 
     private void OnAnimatorMove()
