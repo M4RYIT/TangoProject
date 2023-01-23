@@ -41,7 +41,6 @@ public class LeaderController : MonoBehaviour
     public bool IsMoving { get => moving; }
     public bool IsSiding { get => siding; }
     public float MoveDir { get => anim.GetFloat(AnimatorAsset.DirParam); }
-    public float OchosSpeed { get => anim.GetFloat(AnimatorAsset.OchosSpeedParam); }
     public Vector3 Forward { get => new(ModelRoot.forward.x, 0f, ModelRoot.forward.z); }
 
     // Start is called before the first frame update

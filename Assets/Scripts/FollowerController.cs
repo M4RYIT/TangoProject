@@ -35,8 +35,6 @@ public class FollowerController : MonoBehaviour
         anim.SetBool(AnimatorAsset.MedialunaParam, Leader.MedialunaAction);
         anim.SetFloat(AnimatorAsset.MedialunaDirParam, Leader.MedialunaInput);
         anim.SetBool(AnimatorAsset.OchosParam, Leader.OchosInput);
-        //anim.SetBool(AnimatorAsset.OchosMirrorParam, Leader.OchosSpeed < 0f);
-        //anim.SetFloat(AnimatorAsset.OchosSpeedParam, Leader.OchosSpeed);
 
         anim.SetBool(AnimatorAsset.RotateParam, Mathf.Abs(Leader.TurnInput) > 0f);
         anim.SetFloat(AnimatorAsset.RotateDirParam, Leader.TurnInput);       

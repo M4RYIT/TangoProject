@@ -13,7 +13,6 @@ public class LeaderAnimatorAsset : ScriptableObject
     public string MedialunaParam;
     public string MedialunaDirParam;
     public string OchosParam;
-    public string OchosSpeedParam;
     public string CoupleParam;
     public string SameLegsParam;
 }
