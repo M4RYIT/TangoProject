@@ -9,6 +9,8 @@ public class LeaderController : MonoBehaviour
     public InputAsset InputAsset;
     public LeaderAnimatorAsset AnimatorAsset;
     public Transform ModelRoot;
+    public Transform LeftHand;
+    public Transform RightHand;
     public float TurnSpeed;
     public float MoveSpeed;
     public int MinTracks;

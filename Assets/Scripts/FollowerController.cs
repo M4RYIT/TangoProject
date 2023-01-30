@@ -9,6 +9,8 @@ public class FollowerController : MonoBehaviour
     public float LeaderDistance;
     public float DistancePerTracks;
     public FollowerAnimatorAsset AnimatorAsset;
+    public Transform LeftHand;
+    public Transform RightHand;
 
     Animator anim;
     int currentTracks;
@@ -54,7 +56,7 @@ public class FollowerController : MonoBehaviour
 
         if (tracksSwitch)
         {
-            transform.position += deltaTracks * DistancePerTracks * transform.right; 
+            transform.position += deltaTracks * DistancePerTracks * transform.right;
         }
 
         float deltaDistance = Vector3.Distance(transform.position, Leader.transform.position) - LeaderDistance;
