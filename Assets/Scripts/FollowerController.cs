@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class FollowerController : MonoBehaviour
 {
     public LeaderController Leader;
+    [Range(0f, 1f)]
     public float LeaderDistance;
     public float DistancePerTracks;
     public FollowerAnimatorAsset AnimatorAsset;

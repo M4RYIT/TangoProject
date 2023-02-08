@@ -994,7 +994,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25
+  m_Radius: 0.15
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -1012,7 +1012,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Leader: {fileID: 0}
   LeaderDistance: 2
+  DistancePerTracks: 0
   AnimatorAsset: {fileID: 11400000, guid: c7aacf9fc3f38464fadd57d78a43c421, type: 2}
+  LeftHand: {fileID: 0}
+  RightHand: {fileID: 0}
 --- !u!1 &4182523312407117776
 GameObject:
   m_ObjectHideFlags: 0
