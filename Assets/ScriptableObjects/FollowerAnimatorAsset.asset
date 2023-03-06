@@ -17,14 +17,15 @@ MonoBehaviour:
   DirParam: LinearDir
   FootParam: IdleFoot
   TracksNumberParam: Tracks
+  UpperTurnParam: UpperTurn
   UpperTurnDirParam: UpperTurnDir
   CunitaParam: Cunita
   MedialunaParam: Medialuna
   MedialunaDirParam: MedialunaDir
   OchosParam: Ochos
-  OchosSpeedParam: OchosSpeed
   CoupleParam: Couple
   SameLegsParam: Couple
+  PivotDirParam: PivotDir
+  PivotParam: Pivot
   RotateParam: Rotate
   RotateDirParam: RotationDir
-  OchosMirrorParam: OchosMirror

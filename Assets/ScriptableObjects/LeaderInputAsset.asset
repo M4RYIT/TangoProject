@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d9914cb916a6443be938f9fc133c99, type: 3}
   m_Name: LeaderInputAsset
   m_EditorClassIdentifier: 
-  ForwardKey: 119
-  BackwardKey: 115
-  TracksSwitchKey: 112
-  OchosKey: 111
-  TurnAxis: Horizontal
-  SideAxis: Side
-  UpperTurnAxis: UpperTurn
-  MedialunaAxis: Medialuna
+  inputs:
+  - InputType: 2
+    InputKey1: 119
+    InputKey2: 115
+  - InputType: 1
+    InputKey1: 113
+    InputKey2: 101
+  - InputType: 3
+    InputKey1: 97
+    InputKey2: 100
+  - InputType: 0
+    InputKey1: 112
+    InputKey2: 0
+  - InputType: 4
+    InputKey1: 56
+    InputKey2: 57
+  - InputType: 5
+    InputKey1: 52
+    InputKey2: 54
