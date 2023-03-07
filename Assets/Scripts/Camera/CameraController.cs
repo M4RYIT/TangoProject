@@ -5,24 +5,18 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public float CameraRotSpeed;
-
-    private Vector3 currentPos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentPos = Input.mousePosition;
-    }
+    public Transform TargetTransform;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             float xSign = Input.GetAxis("Mouse X");
             float ySign = Input.GetAxis("Mouse Y");
+            bool horizontal = Mathf.Abs(xSign) > Mathf.Abs(ySign);
 
-            transform.rotation *= Quaternion.Euler(new Vector3(-ySign, xSign, 0f) * CameraRotSpeed);
+            transform.RotateAround(TargetTransform.position, horizontal ? Vector3.up : transform.right, (horizontal ? xSign : -ySign) * CameraRotSpeed);            
         }
     }
 }

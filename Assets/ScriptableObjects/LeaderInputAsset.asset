@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputs:
   - InputType: 2
-    InputKey1: 119
-    InputKey2: 115
+    InputKey1: 115
+    InputKey2: 119
   - InputType: 1
     InputKey1: 113
     InputKey2: 101

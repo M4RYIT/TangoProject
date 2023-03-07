@@ -1046,10 +1046,10 @@ MonoBehaviour:
   Other: {fileID: 0}
   LeftHand:
     TargetTransform: {fileID: 0}
-    TargetOffset: {x: 0.06, y: 0, z: 0.06}
+    TargetOffset: {x: 0, y: 0, z: 0.06}
   RightHand:
     TargetTransform: {fileID: 0}
-    TargetOffset: {x: 0.06, y: 0, z: 0.06}
+    TargetOffset: {x: 0, y: 0, z: 0.06}
   Hip:
     TargetTransform: {fileID: 0}
     TargetOffset: {x: 0, y: 0, z: 0}

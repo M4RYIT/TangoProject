@@ -38,6 +38,8 @@ public class FollowerController : MonoBehaviour
         anim.SetFloat(AnimatorAsset.RotateDirParam, -Leader.RotationDir);
         anim.SetBool(AnimatorAsset.PivotParam, Leader.Pivoting);
         anim.SetFloat(AnimatorAsset.PivotDirParam, -Leader.PivotDir);
+        anim.SetBool(AnimatorAsset.CoupleParam, Leader.Couple);
+        anim.SetBool(AnimatorAsset.SameLegsParam, Leader.SameLegs);
 
         if (tracksSwitch = Leader.TracksInput)
         {

@@ -41,6 +41,8 @@ public class LeaderController : MonoBehaviour
     public float RotationDir { get => turnInput; }
     public float UpperTurnDir { get => upperTurnInput; }
     public Vector3 Forward { get => new(ModelRoot.forward.x, 0f, ModelRoot.forward.z); }
+    public bool Couple { get => anim.GetBool(AnimatorAsset.CoupleParam); }
+    public bool SameLegs { get => anim.GetBool(AnimatorAsset.SameLegsParam); }
 
     private void Awake()
     {
@@ -92,5 +94,6 @@ public class LeaderController : MonoBehaviour
     {
         ikController.enabled = add;
         anim.SetBool(AnimatorAsset.CoupleParam, add);
+        anim.SetBool(AnimatorAsset.SameLegsParam, !add);
     }
 }
