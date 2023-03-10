@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &127376049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127376050}
+  m_Layer: 0
+  m_Name: RightHipIk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127376050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127376049}
+  m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
+  m_LocalPosition: {x: 0.15, y: 1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8765202728389823692}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 90}
 --- !u!1 &329969796
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954865242}
   m_Layer: 0
-  m_Name: HipIk
+  m_Name: LeftHipIk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,6 +2061,7 @@ Transform:
   - {fileID: 443503848117847430}
   - {fileID: 1686703568989471471}
   - {fileID: 954865242}
+  - {fileID: 127376050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2082,7 +2114,7 @@ MonoBehaviour:
   InputAsset: {fileID: 11400000, guid: e66e02764290a8a49b524966c39ec48d, type: 2}
   AnimatorAsset: {fileID: 11400000, guid: b915458f909d69e4db8ac770f0c11a1b, type: 2}
   ModelRoot: {fileID: 724047974}
-  TurnSpeed: 10
+  TurnSpeed: 20
   MinTracks: 2
   MaxTracks: 4
 --- !u!114 &1846309617
@@ -2105,7 +2137,10 @@ MonoBehaviour:
   RightHand:
     TargetTransform: {fileID: 1549597128}
     TargetOffset: {x: 0, y: 0, z: -0.06}
-  Hip:
+  LeftHip:
+    TargetTransform: {fileID: 0}
+    TargetOffset: {x: 0, y: 0, z: 0}
+  RightHip:
     TargetTransform: {fileID: 0}
     TargetOffset: {x: 0, y: 0, z: 0}
   LeftSide: 1

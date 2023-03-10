@@ -199,6 +199,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21007078}
   m_CullTransparentMesh: 1
+--- !u!4 &127376050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 127376050, guid: e096375093ad0394c99d1f841863f384, type: 3}
+  m_PrefabInstance: {fileID: 1846309611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &329969797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 329969797, guid: e096375093ad0394c99d1f841863f384, type: 3}
@@ -1481,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e02b56a5c511ae4c87e6325e8750941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstStepDistance: 0.3
+  FirstStepDistance: 0.4
   SecondStepDistance: 0.7
 --- !u!4 &1269874346
 Transform:
@@ -1596,6 +1601,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398603866}
   m_CullTransparentMesh: 1
+--- !u!4 &1464084276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1464084276, guid: 5a2e1686642dbe742826eabf60132756, type: 3}
+  m_PrefabInstance: {fileID: 7225297904108146516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527095464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,10 +2108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1846309614, guid: e096375093ad0394c99d1f841863f384, type: 3}
-      propertyPath: TurnSpeed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 1846309617, guid: e096375093ad0394c99d1f841863f384, type: 3}
       propertyPath: Other
       value: 
@@ -2111,9 +2117,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1269874345}
     - target: {fileID: 1846309617, guid: e096375093ad0394c99d1f841863f384, type: 3}
-      propertyPath: Hip.TargetTransform
+      propertyPath: LeftHip.TargetTransform
       value: 
       objectReference: {fileID: 1270947426}
+    - target: {fileID: 1846309617, guid: e096375093ad0394c99d1f841863f384, type: 3}
+      propertyPath: RightHip.TargetTransform
+      value: 
+      objectReference: {fileID: 1464084276}
     - target: {fileID: 8281998620736460406, guid: e096375093ad0394c99d1f841863f384, type: 3}
       propertyPath: m_Name
       value: Leader
@@ -2277,13 +2287,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1269874345}
     - target: {fileID: 1275180661, guid: 5a2e1686642dbe742826eabf60132756, type: 3}
-      propertyPath: Hip.TargetTransform
+      propertyPath: LeftHip.TargetTransform
       value: 
-      objectReference: {fileID: 954865242}
+      objectReference: {fileID: 127376050}
     - target: {fileID: 1275180661, guid: 5a2e1686642dbe742826eabf60132756, type: 3}
       propertyPath: LeftHand.TargetTransform
       value: 
       objectReference: {fileID: 1549597128}
+    - target: {fileID: 1275180661, guid: 5a2e1686642dbe742826eabf60132756, type: 3}
+      propertyPath: RightHip.TargetTransform
+      value: 
+      objectReference: {fileID: 954865242}
     - target: {fileID: 1275180661, guid: 5a2e1686642dbe742826eabf60132756, type: 3}
       propertyPath: RightHand.TargetTransform
       value: 

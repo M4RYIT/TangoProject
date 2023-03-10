@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270947426}
   m_Layer: 0
-  m_Name: HipIk
+  m_Name: RightHipIk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,13 +23,44 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270947425}
-  m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
   m_LocalPosition: {x: 0.15, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3661313201728841978}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: -90}
+--- !u!1 &1464084275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464084276}
+  m_Layer: 0
+  m_Name: LeftHipIk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464084276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464084275}
+  m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
+  m_LocalPosition: {x: -0.15, y: 1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3661313201728841978}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 90}
 --- !u!1 &15657677986980858
 GameObject:
@@ -977,6 +1008,7 @@ Transform:
   - {fileID: 5569965248936305072}
   - {fileID: 6630290900579477209}
   - {fileID: 1270947426}
+  - {fileID: 1464084276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1050,7 +1082,10 @@ MonoBehaviour:
   RightHand:
     TargetTransform: {fileID: 0}
     TargetOffset: {x: 0, y: 0, z: 0.06}
-  Hip:
+  LeftHip:
+    TargetTransform: {fileID: 0}
+    TargetOffset: {x: 0, y: 0, z: 0}
+  RightHip:
     TargetTransform: {fileID: 0}
     TargetOffset: {x: 0, y: 0, z: 0}
   LeftSide: 0

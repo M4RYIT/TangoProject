@@ -54,23 +54,6 @@ public class FollowerController : MonoBehaviour
 
         transform.RotateAround(Leader.ModelRoot.position, Vector3.up, Vector3.SignedAngle(-transform.forward, Leader.Forward, Vector3.up));
 
-        if (tracksSwitch)
-        {
-            transform.position += deltaTracks * DistancePerTracks * transform.right;
-        }
-
-        float deltaDistance = Vector3.Distance(transform.position, Leader.transform.position) - LeaderDistance;
-        if (Mathf.Abs(deltaDistance) > 0f)
-        {
-            transform.position += transform.forward * deltaDistance;
-        }
-
-        float horizontalDistance = Leader.transform.InverseTransformPoint(transform.position).x;
-        float maxHorizontalDistance = DistancePerTracks * (currentTracks - Leader.MinTracks);
-        float horizontalDelta = Mathf.Abs(horizontalDistance) - maxHorizontalDistance;
-        if (horizontalDelta > 0f)
-        {
-            transform.position += transform.right * (horizontalDelta * Mathf.Sign(horizontalDistance));
-        }
+        transform.position = Leader.transform.position + (Leader.Forward * LeaderDistance) + ((currentTracks - Leader.MinTracks) * DistancePerTracks * -transform.right); 
     }
 }

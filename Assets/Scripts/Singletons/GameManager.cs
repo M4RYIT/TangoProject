@@ -6,5 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public Action<bool> OnFollowerAddSub;    
+    public Action<bool> OnFollowerAddSub;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }
